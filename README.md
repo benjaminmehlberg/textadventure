@@ -1,2 +1,2 @@
 # textadventure
-A simple textadventure
+A text-based adventure game
