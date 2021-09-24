@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-
-from modules import Room, Character, Enemy, Friend, Item, RPGInfo
-import time, sys
+"""
+A simple text adventure. Main program
+"""
+import time
+import sys
 import dungeon
-
+from modules import Room, Character, Enemy, Friend, Item, RPGInfo
 
 def show_inventory(inventory):
 
