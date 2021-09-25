@@ -1,4 +1,4 @@
-from textadventure import show_inventory
+from dungeon import init
 
-def test_show_inventory():
-    assert 1 == 1
+def test_init():
+    assert type(init()) != list
