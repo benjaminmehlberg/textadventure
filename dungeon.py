@@ -1,7 +1,7 @@
 """
 Dungeon setup file
 """
-from modules import Room, Character, Enemy, Friend, Item, RPGInfo
+from modules import Room, Enemy, Friend, Item, RPGInfo
 
 def init():
 
