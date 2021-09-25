@@ -4,7 +4,7 @@ A simple text adventure. Main program
 """
 import sys
 import dungeon
-from modules import Room, Character, Enemy, Friend, Item, RPGInfo
+from modules import Room, Character, Enemy, Friend
 
 
 def show_inventory(inventory):
