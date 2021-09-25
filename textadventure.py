@@ -6,6 +6,7 @@ import sys
 import dungeon
 from modules import Room, Character, Enemy, Friend, Item, RPGInfo
 
+
 def show_inventory(inventory):
 
     print("\n" + "<-- Your inventory -->".center(30))
@@ -15,6 +16,7 @@ def show_inventory(inventory):
         [print(item.name.center(30)) for item in inventory]
     print("<-------------------->".center(30))
     print("\n")
+
 
 # Initialize rooms, items, characters
 current_room = dungeon.init()
@@ -50,7 +52,7 @@ while True:
             break
     elif command == "take":
         inventory.append(current_room.take_item())
-        #show_inventory(inventory)
+        # show_inventory(inventory)
     elif command == "give":
         if current_room.character is None:
             print("No one's here except you!")
@@ -63,8 +65,9 @@ while True:
                 current_room.character = None
             else:
                 desc = current_room.character.name + " hates you now."
-                current_room.character = Enemy(current_room.character.name, desc,
-                                               current_room.character.weakness)
+                current_room.character = Enemy(
+                    current_room.character.name, desc, current_room.character.weakness
+                )
         else:
             print(current_room.character, " doesn't want a present from you.")
     else:
