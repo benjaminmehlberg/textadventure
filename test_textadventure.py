@@ -3,7 +3,6 @@
 Test script
 """
 from textadventure import show_inventory
-from dungeon import init
 
-def test_init():
+def test_show_inventory():
     assert 1 == 1
