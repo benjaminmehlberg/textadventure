@@ -26,7 +26,7 @@ while True:
     current_room.get_details()
     show_inventory(inventory)
 
-    command = input("north/south/west/east/talk/fight/take/give\n> ")
+    command = input("north/south/west/east/talk/fight/take/give", "\n", "> ")
 
     # Check whether a direction was typed
     if command in ["north", "south", "east", "west"]:
