@@ -10,19 +10,19 @@ from modules import Room, Character, Enemy, Friend, Item, RPGInfo
 def show_inventory(inventory):
 
     print("\n" + "<-- Your inventory -->".center(30))
-    print("<Empty>".center(30)) if inventory == [] else \
-        [print(item.name.center(30)) for item in inventory]
+    (print("<Empty>".center(30)) if inventory == [] else
+        [print(item.name.center(30)) for item in inventory])
     print("<-------------------->".center(30))
     print("\n")
 
-
+# Initialize rooms, items, characters
 current_room = dungeon.init()
 inventory = list()
 print(f"There are {Room.number_of_rooms} rooms to explore")
 
+# Main loop
 while True:
-    print(current_room)
-    print(current_room.name)
+    print(current_room.name, current_room.linked_rooms)
     current_room.get_details()
     show_inventory(inventory)
 
@@ -62,7 +62,8 @@ while True:
                 current_room.character = None
             else:
                 desc = current_room.character.name + " hates you now."
-                current_room.character = Enemy(current_room.character.name, desc, current_room.character.weakness)
+                current_room.character = Enemy(current_room.character.name, desc,
+                                               current_room.character.weakness)
         else:
             print(current_room.character, " doesn't want a present from you.")
     else:
