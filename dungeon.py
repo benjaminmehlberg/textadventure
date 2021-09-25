@@ -1,7 +1,6 @@
 """
 Dungeon setup file
 """
-import time
 from modules import Room, Character, Enemy, Friend, Item, RPGInfo
 
 def init():
