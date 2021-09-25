@@ -10,14 +10,14 @@ from modules import Room, Character, Enemy, Friend, Item, RPGInfo
 def show_inventory(inventory):
 
     print("\n" + "<-- Your inventory -->".center(30))
-    (print("<Empty>".center(30)) if inventory == [] else
+    print("<Empty>".center(30)) if inventory == [] else
         [print(item.name.center(30)) for item in inventory])
     print("<-------------------->".center(30))
     print("\n")
 
 # Initialize rooms, items, characters
 current_room = dungeon.init()
-inventory = list()
+inventory = ()
 print(f"There are {Room.number_of_rooms} rooms to explore")
 
 # Main loop
@@ -26,7 +26,7 @@ while True:
     current_room.get_details()
     show_inventory(inventory)
 
-    command = input("north/south/west/east/talk/fight/take/give > ")
+    command = input("north/south/west/east/talk/fight/take/give\n> ")
 
     # Check whether a direction was typed
     if command in ["north", "south", "east", "west"]:
